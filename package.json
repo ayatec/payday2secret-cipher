@@ -1,0 +1,31 @@
+{
+  "name": "payday2secret-cipher",
+  "version": "1.0.0",
+  "main": "src/index.html",
+  "repository": "https://github.com/ayatec/payday2secret-cipher.git",
+  "author": "ayatec <aya@ayatec.jp>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel src/index.html --open"
+  },
+  "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-feather": "^1.1.4",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-app": "^3.1.2",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "parcel-bundler": "^1.10.3",
+    "react-hot-loader": "^4.3.11",
+    "sass": "^1.14.3"
+  }
+}
