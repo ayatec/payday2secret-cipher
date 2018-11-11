@@ -38,7 +38,7 @@ const Style = styled.div`
 const TextArea = styled.div`
   margin: 1rem;
   width: 50%;
-  min-height: 2rem;
+  min-height: 1.7rem;
   border-radius: .5rem;
   text-align: center;
   overflow: auto;
@@ -47,11 +47,16 @@ const TextArea = styled.div`
 `;
 
 const TextAreaLeft = styled.pre`
+  margin: 0;
+  padding: 0;
   font-size: 1.2rem;
   font-family: 'ProximaSoft-Regular', 'Noto Sans Japanese', -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
 `;
 
 const TextAreaRight = styled.pre`
+  margin: 0;
+  padding: 0;
+  background: #ccc;
   font-size: 1.2rem;
   font-family: 'ProximaSoft-Regular', 'Noto Sans Japanese', -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
   direction: rtl;
