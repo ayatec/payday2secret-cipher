@@ -29,32 +29,36 @@ const CipherInputAreaComponent = ({ dispatch }) => {
   return (
     <Style>
       <KeyArea>
-        <CipherInputKey keyCode="a" />
-        <CipherInputKey keyCode="b" />
-        <CipherInputKey keyCode="c" />
-        <CipherInputKey keyCode="d" />
+        <CipherInputKey keyCode="q" />
+        <CipherInputKey keyCode="w" />
         <CipherInputKey keyCode="e" />
+        <CipherInputKey keyCode="r" />
+        <CipherInputKey keyCode="t" />
+        <CipherInputKey keyCode="y" />
+        <CipherInputKey keyCode="u" />
+        <CipherInputKey keyCode="i" />
+        <CipherInputKey keyCode="o" />
+        <CipherInputKey keyCode="p" />
+      </KeyArea>
+      <KeyArea>
+        <CipherInputKey keyCode="a" />
+        <CipherInputKey keyCode="s" />
+        <CipherInputKey keyCode="d" />
         <CipherInputKey keyCode="f" />
         <CipherInputKey keyCode="g" />
         <CipherInputKey keyCode="h" />
-        <CipherInputKey keyCode="i" />
         <CipherInputKey keyCode="j" />
         <CipherInputKey keyCode="k" />
         <CipherInputKey keyCode="l" />
-        <CipherInputKey keyCode="m" />
-        <CipherInputKey keyCode="n" />
-        <CipherInputKey keyCode="o" />
-        <CipherInputKey keyCode="p" />
-        <CipherInputKey keyCode="q" />
-        <CipherInputKey keyCode="r" />
-        <CipherInputKey keyCode="s" />
-        <CipherInputKey keyCode="t" />
-        <CipherInputKey keyCode="u" />
-        <CipherInputKey keyCode="v" />
-        <CipherInputKey keyCode="w" />
-        <CipherInputKey keyCode="x" />
-        <CipherInputKey keyCode="y" />
+      </KeyArea>
+      <KeyArea>
         <CipherInputKey keyCode="z" />
+        <CipherInputKey keyCode="x" />
+        <CipherInputKey keyCode="c" />
+        <CipherInputKey keyCode="v" />
+        <CipherInputKey keyCode="b" />
+        <CipherInputKey keyCode="n" />
+        <CipherInputKey keyCode="m" />
       </KeyArea>
       <OparationArea>
         <InputOparation onClick={(e) => { handleInputSpace(e); }}>
@@ -79,9 +83,9 @@ const Style = styled.div`
 
 const KeyArea = styled.div`
   max-width: 480px;
-  margin: .5rem auto;
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const OparationArea = styled.div`
