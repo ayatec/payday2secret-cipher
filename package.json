@@ -9,6 +9,7 @@
     "start": "parcel src/index.html --open"
   },
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-feather": "^1.1.4",
