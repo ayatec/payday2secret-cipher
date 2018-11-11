@@ -68,7 +68,7 @@ const CipherInputAreaComponent = ({ dispatch }) => {
           ← Back
         </InputOparation>
         <InputOparation onClick={(e) => { handleInputLineBreak(e); }}>
-        ⏎ Line break
+          ⏎ Line break
         </InputOparation>
       </OparationArea>
     </Style>
