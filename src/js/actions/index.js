@@ -1,7 +1,7 @@
 
 export const INPUT_KEY = 'INPUT_KEY';
 export const INPUT_LINE_BREAK = 'INPUT_LINE_BREAK';
-export const INPUT_SPACE = 'INPUT_Space';
+export const INPUT_SPACE = 'INPUT_SPACE';
 export const INPUT_BACK = 'INPUT_BACK';
 export const CHANGE_INPUT = 'CHANGE_INPUT';
 export const CHANGE_INPUT_MODE = 'CHANGE_INPUT_MODE';
