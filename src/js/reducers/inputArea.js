@@ -13,25 +13,21 @@ const initialState = {
 const inputArea = (state = initialState, action) => {
   switch (action.type) {
     case INPUT_KEY:
-      console.log('keyCode', action.keyCode);
       return {
         text: state.text + action.keyCode,
       };
 
     case INPUT_LINE_BREAK:
-      console.log('line break');
       return {
         text: `${state.text}\n`,
       };
 
     case INPUT_SPACE:
-      console.log('space');
       return {
         text: `${state.text} `,
       };
 
     case INPUT_BACK:
-      console.log('back');
       return {
         text: state.text.slice(0, -1),
       };
