@@ -8,13 +8,9 @@ import { connect } from 'react-redux';
 import { inputKey } from '../actions';
 
 const CipherInputKeyComponent = ({ dispatch, keyCode }) => {
-  const handleInputKey = (e) => {
-    e.preventDefault();
-    dispatch(inputKey(keyCode));
-  };
 
   return (
-    <Style onClick={(e) => { handleInputKey(e); }}>
+    <Style onClick={() => dispatch(inputKey(keyCode))}>
       {keyCode}
     </Style>
   );

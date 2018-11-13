@@ -13,19 +13,6 @@ import {
 import CipherInputKey from './CipherInputKey';
 
 const CipherInputAreaComponent = ({ dispatch }) => {
-  const handleInputLineBreak = (e) => {
-    e.preventDefault();
-    dispatch(inputLineBreak());
-  };
-  const handleInputBack = (e) => {
-    e.preventDefault();
-    dispatch(inputBack());
-  };
-  const handleInputSpace = (e) => {
-    e.preventDefault();
-    dispatch(inputSpace());
-  };
-
   return (
     <Style>
       <KeyArea>
@@ -61,13 +48,13 @@ const CipherInputAreaComponent = ({ dispatch }) => {
         <CipherInputKey keyCode="m" />
       </KeyArea>
       <OparationArea>
-        <InputOparation onClick={(e) => { handleInputSpace(e); }}>
+        <InputOparation onClick={() => dispatch(inputLineBreak())}>
           Space
         </InputOparation>
-        <InputOparation onClick={(e) => { handleInputBack(e); }}>
+        <InputOparation onClick={() => dispatch(inputBack())}>
           ← Back
         </InputOparation>
-        <InputOparation onClick={(e) => { handleInputLineBreak(e); }}>
+        <InputOparation onClick={() => dispatch(inputSpace())}>
           ⏎ Line break
         </InputOparation>
       </OparationArea>
