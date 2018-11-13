@@ -5,31 +5,26 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { changeText } from '../actions';
+
 import StyledOutputTextArea from './styled/StyledOutputTextArea';
 
 // Component
-const DecryptionOutputAreaComponent = ({ text }) => {
-  return (
-    <Style>
-      <TextArea>
-        <TextAreaLeft>
-          {text}
-        </TextAreaLeft>
-      </TextArea>
-      <TextArea>
-        <TextAreaRight>
-          {text}
-        </TextAreaRight>
-      </TextArea>
-      <TranslateLink
-        target="_blank"
-        href={`https://translate.google.com/#en/ja/${text}`}
-      >
-        { text.trim() ? 'Translate to Japanese' : '' }
-      </TranslateLink>
-    </Style>
-  );
-};
+const DecryptionOutputAreaComponent = ({
+  onChange,
+  text,
+}) => (
+  <Style>
+    <TextAreaLeft onChange={event => onChange(event)} value={text} />
+    <TextAreaRight onChange={event => onChange(event)} value={text} />
+    <TranslateLink
+      target="_blank"
+      href={`https://translate.google.com/#en/ja/${text.trim().replace(/\n/g, ' ')}`}
+    >
+      { text.trim() ? 'Translate to Japanese' : '' }
+    </TranslateLink>
+  </Style>
+);
 
 // Style
 const Style = styled.div`
@@ -57,6 +52,7 @@ const TranslateLink = styled.a`
 
 // PropTypes
 DecryptionOutputAreaComponent.propTypes = {
+  onChange: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
 };
 
@@ -67,8 +63,15 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onChange: event => dispatch(changeText(event.target.value)),
+  };
+};
+
 const DecryptionOutputArea = connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(DecryptionOutputAreaComponent);
 
 export default DecryptionOutputArea;

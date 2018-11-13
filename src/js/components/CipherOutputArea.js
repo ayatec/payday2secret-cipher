@@ -5,25 +5,20 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { changeText } from '../actions';
+
 import StyledOutputTextArea from './styled/StyledOutputTextArea';
 
 // Component
-const CipherOutputAreaComponent = ({ text }) => {
-  return (
-    <Style>
-      <TextArea>
-        <TextAreaLeft>
-          {text}
-        </TextAreaLeft>
-      </TextArea>
-      <TextArea>
-        <TextAreaRight>
-          {text}
-        </TextAreaRight>
-      </TextArea>
-    </Style>
-  );
-};
+const CipherOutputAreaComponent = ({
+  onChange,
+  text,
+}) => (
+  <Style>
+    <TextAreaLeft onChange={event => onChange(event)} value={text} />
+    <TextAreaRight onChange={event => onChange(event)} value={text} />
+  </Style>
+);
 
 // Style
 const Style = styled.div`
@@ -43,6 +38,7 @@ const TextAreaRight = styled(StyledOutputTextArea)`
 
 // PropTypes
 CipherOutputAreaComponent.propTypes = {
+  onChange: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
 };
 
@@ -53,8 +49,15 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onChange: event => dispatch(changeText(event.target.value)),
+  };
+};
+
 const CipherOutputArea = connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(CipherOutputAreaComponent);
 
 export default CipherOutputArea;
