@@ -4,6 +4,7 @@ import {
   INPUT_LINE_BREAK,
   INPUT_SPACE,
   INPUT_BACK,
+  CHANGE_TEXT,
 } from '../actions';
 
 const initialState = {
@@ -30,6 +31,11 @@ const inputArea = (state = initialState, action) => {
     case INPUT_BACK:
       return {
         text: state.text.slice(0, -1),
+      };
+
+    case CHANGE_TEXT:
+      return {
+        text: action.text,
       };
 
     default:
