@@ -9,6 +9,10 @@ import { inputKey } from '../actions';
 
 import StyledInputKey from './styled/StyledInputKey';
 
+const CipherInputKeyComponent = ({
+  dispatch,
+  keyCode,
+}) => {
   return (
     <Style onClick={() => dispatch(inputKey(keyCode))}>
       {keyCode}
