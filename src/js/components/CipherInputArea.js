@@ -14,44 +14,25 @@ import {
 import CipherInputKey from './CipherInputKey';
 import StyledInputKey from './styled/StyledInputKey';
 
+const keyMap = [
+  ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+  ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+  ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
+];
+
 const CipherInputAreaComponent = ({
   dispatchInputSpace,
   dispatchInputBack,
   dispatchInputLineBreak,
 }) => (
   <Style>
-    <KeyArea>
-      <CipherInputKey keyCode="q" />
-      <CipherInputKey keyCode="w" />
-      <CipherInputKey keyCode="e" />
-      <CipherInputKey keyCode="r" />
-      <CipherInputKey keyCode="t" />
-      <CipherInputKey keyCode="y" />
-      <CipherInputKey keyCode="u" />
-      <CipherInputKey keyCode="i" />
-      <CipherInputKey keyCode="o" />
-      <CipherInputKey keyCode="p" />
-    </KeyArea>
-    <KeyArea>
-      <CipherInputKey keyCode="a" />
-      <CipherInputKey keyCode="s" />
-      <CipherInputKey keyCode="d" />
-      <CipherInputKey keyCode="f" />
-      <CipherInputKey keyCode="g" />
-      <CipherInputKey keyCode="h" />
-      <CipherInputKey keyCode="j" />
-      <CipherInputKey keyCode="k" />
-      <CipherInputKey keyCode="l" />
-    </KeyArea>
-    <KeyArea>
-      <CipherInputKey keyCode="z" />
-      <CipherInputKey keyCode="x" />
-      <CipherInputKey keyCode="c" />
-      <CipherInputKey keyCode="v" />
-      <CipherInputKey keyCode="b" />
-      <CipherInputKey keyCode="n" />
-      <CipherInputKey keyCode="m" />
-    </KeyArea>
+    {keyMap.map(keyRow => (
+      <KeyArea key={keyRow[0]}>
+        {keyRow.map(key => (
+          <CipherInputKey keyCode={key} key={key} />
+        ))}
+      </KeyArea>
+    ))}
     <OparationArea>
       <InputOparation onClick={() => dispatchInputSpace()}>
         Space
