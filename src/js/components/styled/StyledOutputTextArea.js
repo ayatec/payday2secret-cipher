@@ -7,6 +7,7 @@ const StyledOutputTextArea = styled(Textarea)`
   font-family: 'ProximaSoft-Regular', 'Noto Sans Japanese', -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
   font-weight: bold;
   width: 50%;
+  max-width: 640px;
   min-height: 1.7rem;
   height: auto;
   margin: 1rem;
