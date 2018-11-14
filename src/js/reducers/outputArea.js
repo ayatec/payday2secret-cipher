@@ -11,7 +11,7 @@ const initialState = {
   text: '',
 };
 
-const inputArea = (state = initialState, action) => {
+const outputArea = (state = initialState, action) => {
   switch (action.type) {
     case INPUT_KEY:
       return {
@@ -43,4 +43,4 @@ const inputArea = (state = initialState, action) => {
   }
 };
 
-export default inputArea;
+export default outputArea;

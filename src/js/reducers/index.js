@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import inputArea from './inputArea';
+
+import outputArea from './outputArea';
 
 const AppReducer = combineReducers({
-  inputArea,
+  outputArea,
 });
 
 export default AppReducer;
