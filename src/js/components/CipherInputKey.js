@@ -10,15 +10,13 @@ import { inputKey } from '../actions';
 import StyledInputKey from './styled/StyledInputKey';
 
 const CipherInputKeyComponent = ({
-  dispatch,
+  dispatchInputKey,
   keyCode,
-}) => {
-  return (
-    <Style onClick={() => dispatch(inputKey(keyCode))}>
-      {keyCode}
-    </Style>
-  );
-};
+}) => (
+  <Style onClick={() => dispatchInputKey(keyCode)}>
+    {keyCode}
+  </Style>
+);
 
 // Style
 const Style = styled(StyledInputKey)`
@@ -40,10 +38,18 @@ const Style = styled(StyledInputKey)`
 `;
 
 CipherInputKeyComponent.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  dispatchInputKey: PropTypes.func.isRequired,
   keyCode: PropTypes.string.isRequired,
 };
 
-const CipherInputKey = connect()(CipherInputKeyComponent);
+// Redux
+const mapDispatchToProps = dispatch => ({
+  dispatchInputKey: keyCode => dispatch(inputKey(keyCode)),
+});
+
+const CipherInputKey = connect(
+  () => ({}),
+  mapDispatchToProps,
+)(CipherInputKeyComponent);
 
 export default CipherInputKey;
