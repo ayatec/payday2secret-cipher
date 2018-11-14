@@ -14,55 +14,57 @@ import {
 import CipherInputKey from './CipherInputKey';
 import StyledInputKey from './styled/StyledInputKey';
 
-const CipherInputAreaComponent = ({ dispatch }) => {
-  return (
-    <Style>
-      <KeyArea>
-        <CipherInputKey keyCode="q" />
-        <CipherInputKey keyCode="w" />
-        <CipherInputKey keyCode="e" />
-        <CipherInputKey keyCode="r" />
-        <CipherInputKey keyCode="t" />
-        <CipherInputKey keyCode="y" />
-        <CipherInputKey keyCode="u" />
-        <CipherInputKey keyCode="i" />
-        <CipherInputKey keyCode="o" />
-        <CipherInputKey keyCode="p" />
-      </KeyArea>
-      <KeyArea>
-        <CipherInputKey keyCode="a" />
-        <CipherInputKey keyCode="s" />
-        <CipherInputKey keyCode="d" />
-        <CipherInputKey keyCode="f" />
-        <CipherInputKey keyCode="g" />
-        <CipherInputKey keyCode="h" />
-        <CipherInputKey keyCode="j" />
-        <CipherInputKey keyCode="k" />
-        <CipherInputKey keyCode="l" />
-      </KeyArea>
-      <KeyArea>
-        <CipherInputKey keyCode="z" />
-        <CipherInputKey keyCode="x" />
-        <CipherInputKey keyCode="c" />
-        <CipherInputKey keyCode="v" />
-        <CipherInputKey keyCode="b" />
-        <CipherInputKey keyCode="n" />
-        <CipherInputKey keyCode="m" />
-      </KeyArea>
-      <OparationArea>
-        <InputOparation onClick={() => dispatch(inputLineBreak())}>
-          Space
-        </InputOparation>
-        <InputOparation onClick={() => dispatch(inputBack())}>
-          ← Back
-        </InputOparation>
-        <InputOparation onClick={() => dispatch(inputSpace())}>
-          ⏎ Line break
-        </InputOparation>
-      </OparationArea>
-    </Style>
-  );
-};
+const CipherInputAreaComponent = ({
+  dispatchInputSpace,
+  dispatchInputBack,
+  dispatchInputLineBreak,
+}) => (
+  <Style>
+    <KeyArea>
+      <CipherInputKey keyCode="q" />
+      <CipherInputKey keyCode="w" />
+      <CipherInputKey keyCode="e" />
+      <CipherInputKey keyCode="r" />
+      <CipherInputKey keyCode="t" />
+      <CipherInputKey keyCode="y" />
+      <CipherInputKey keyCode="u" />
+      <CipherInputKey keyCode="i" />
+      <CipherInputKey keyCode="o" />
+      <CipherInputKey keyCode="p" />
+    </KeyArea>
+    <KeyArea>
+      <CipherInputKey keyCode="a" />
+      <CipherInputKey keyCode="s" />
+      <CipherInputKey keyCode="d" />
+      <CipherInputKey keyCode="f" />
+      <CipherInputKey keyCode="g" />
+      <CipherInputKey keyCode="h" />
+      <CipherInputKey keyCode="j" />
+      <CipherInputKey keyCode="k" />
+      <CipherInputKey keyCode="l" />
+    </KeyArea>
+    <KeyArea>
+      <CipherInputKey keyCode="z" />
+      <CipherInputKey keyCode="x" />
+      <CipherInputKey keyCode="c" />
+      <CipherInputKey keyCode="v" />
+      <CipherInputKey keyCode="b" />
+      <CipherInputKey keyCode="n" />
+      <CipherInputKey keyCode="m" />
+    </KeyArea>
+    <OparationArea>
+      <InputOparation onClick={() => dispatchInputSpace()}>
+        Space
+      </InputOparation>
+      <InputOparation onClick={() => dispatchInputBack()}>
+        ← Back
+      </InputOparation>
+      <InputOparation onClick={() => dispatchInputLineBreak()}>
+        ⏎ Line break
+      </InputOparation>
+    </OparationArea>
+  </Style>
+);
 
 // Style
 const Style = styled.div`
@@ -92,9 +94,21 @@ const InputOparation = styled(StyledInputKey)`
 
 // PropsTypes
 CipherInputAreaComponent.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  dispatchInputSpace: PropTypes.func.isRequired,
+  dispatchInputBack: PropTypes.func.isRequired,
+  dispatchInputLineBreak: PropTypes.func.isRequired,
 };
 
-const CipherInputArea = connect()(CipherInputAreaComponent);
+// Redux
+const mapDispatchToProps = dispatch => ({
+  dispatchInputSpace: () => dispatch(inputSpace()),
+  dispatchInputBack: () => dispatch(inputBack()),
+  dispatchInputLineBreak: () => dispatch(inputLineBreak()),
+});
+
+const CipherInputArea = connect(
+  () => ({}),
+  mapDispatchToProps,
+)(CipherInputAreaComponent);
 
 export default CipherInputArea;
