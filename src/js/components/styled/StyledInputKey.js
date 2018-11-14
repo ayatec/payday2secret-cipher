@@ -1,8 +1,8 @@
 
 // Import
-import styled from 'styled-components';
+import styled from 'react-emotion';
 
-const StyledInputKey = styled.div`
+const StyledInputKey = styled('div')`
   height: 2rem;
   margin: .25rem;
   padding: 0.35rem .5rem 0 .5rem;

@@ -1,7 +1,7 @@
 
 // Import
 import Textarea from 'react-textarea-autosize';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 
 const StyledOutputTextArea = styled(Textarea)`
   font-family: 'ProximaSoft-Regular', 'Noto Sans Japanese', -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;

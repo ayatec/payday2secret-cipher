@@ -1,7 +1,7 @@
 
 // Import
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -28,7 +28,7 @@ const ApplicationMainComponent = ({
 );
 
 // Style
-const Style = styled.div`
+const Style = styled('div')`
 `;
 
 // PropTypes

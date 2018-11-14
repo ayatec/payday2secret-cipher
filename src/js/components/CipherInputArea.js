@@ -2,7 +2,7 @@
 // Import
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import { connect } from 'react-redux';
 
 import {
@@ -48,19 +48,19 @@ const CipherInputAreaComponent = ({
 );
 
 // Style
-const Style = styled.div`
+const Style = styled('div')`
   margin: 0 auto;
   width: 100%;
 `;
 
-const KeyArea = styled.div`
+const KeyArea = styled('div')`
   max-width: 480px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
 `;
 
-const OparationArea = styled.div`
+const OparationArea = styled('div')`
   max-width: 480px;
   margin: .5rem auto;
   display: flex;

@@ -11,13 +11,14 @@
   },
   "dependencies": {
     "prop-types": "^15.6.2",
+    "emotion": "^9.2.12",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-emotion": "^9.2.12",
     "react-feather": "^1.1.4",
     "react-redux": "^5.1.0",
     "react-textarea-autosize": "^7.1.0-1",
-    "redux": "^4.0.1",
-    "styled-components": "^4.0.3"
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

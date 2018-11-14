@@ -1,7 +1,7 @@
 
 // Import
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import PropTypes from 'prop-types';
 
 import StyledOutputTextArea from './styled/StyledOutputTextArea';
@@ -18,7 +18,7 @@ const CipherOutputArea = ({
 );
 
 // Style
-const Style = styled.div`
+const Style = styled('div')`
   display: flex;
   justify-content: center;
 `;

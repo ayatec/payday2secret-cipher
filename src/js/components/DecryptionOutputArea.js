@@ -1,7 +1,7 @@
 
 // Import
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import PropTypes from 'prop-types';
 
 import StyledOutputTextArea from './styled/StyledOutputTextArea';
@@ -24,7 +24,7 @@ const DecryptionOutputArea = ({
 );
 
 // Style
-const Style = styled.div`
+const Style = styled('div')`
   display: flex;
   justify-content: center;
   position: relative;
@@ -41,7 +41,7 @@ const TextAreaRight = styled(StyledOutputTextArea)`
   unicode-bidi: bidi-override;
 `;
 
-const TranslateLink = styled.a`
+const TranslateLink = styled('a')`
   width: 154px;
   padding: .5rem;
   position: absolute;

@@ -1,7 +1,7 @@
 
 // React
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 
 // App
 import ApplicationMain from './ApplicationMain';
@@ -36,35 +36,35 @@ const Application = () => (
 );
 
 // Style
-const Style = styled.div`
+const Style = styled('div')`
   max-width: 1364px;
   margin: 0 auto;
   color: #1e3c78;
   font-weight: 900;
 `;
 
-const Header = styled.header`
+const Header = styled('header')`
   margin: 2rem;
   text-align: left;
   font-size: 2rem;
 `;
 
-const Main = styled.main`
+const Main = styled('main')`
   margin: 0 2rem;
 `;
 
-const Footer = styled.footer`
+const Footer = styled('footer')`
   margin: 2rem;
   text-align: right;
 `;
 
-const FooterGroup = styled.div`
+const FooterGroup = styled('div')`
 `;
 
-const FooterText = styled.span`
+const FooterText = styled('span')`
 `;
 
-const FooterLink = styled.a`
+const FooterLink = styled('a')`
   text-decoration: none;
   &:link, &:visited {
     color: #F7F9FD;
