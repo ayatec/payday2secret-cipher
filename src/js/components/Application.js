@@ -37,6 +37,8 @@ const Application = () => (
 
 // Style
 const Style = styled.div`
+  max-width: 1364px;
+  margin: 0 auto;
   color: #1e3c78;
   font-weight: 900;
 `;
