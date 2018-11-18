@@ -20,7 +20,7 @@ const ApplicationMainComponent = ({
   dispatchChangeText,
   dispatchChangeReverseText,
   text,
-  reverseText,
+  reversedText,
 }) => (
   <Style>
     <CipherInputArea />
@@ -28,13 +28,13 @@ const ApplicationMainComponent = ({
       dispatchChangeText={dispatchChangeText}
       dispatchChangeReverseText={dispatchChangeReverseText}
       text={text}
-      reverseText={reverseText}
+      reversedText={reversedText}
     />
     <DecryptionOutputArea
       dispatchChangeText={dispatchChangeText}
       dispatchChangeReverseText={dispatchChangeReverseText}
       text={text}
-      reverseText={reverseText}
+      reversedText={reversedText}
     />
   </Style>
 );
@@ -48,13 +48,13 @@ ApplicationMainComponent.propTypes = {
   dispatchChangeText: PropTypes.func.isRequired,
   dispatchChangeReverseText: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
-  reverseText: PropTypes.string.isRequired,
+  reversedText: PropTypes.string.isRequired,
 };
 
 // Redux
 const mapStateToProps = state => ({
   text: state.outputArea.text,
-  reverseText: state.outputArea.text.split('\n').reverse().join('\n').split('').reverse().join(''),
+  reversedText: state.outputArea.text.split('\n').reverse().join('\n').split('').reverse().join(''),
 });
 
 const mapDispatchToProps = dispatch => ({

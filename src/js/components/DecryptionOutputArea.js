@@ -15,7 +15,7 @@ const DecryptionOutputArea = ({
   dispatchChangeReverseText,
   dispatchReverseText,
   text,
-  reverseText,
+  reversedText,
 }) => (
   <Style>
     <TextAreaLeft
@@ -29,7 +29,7 @@ const DecryptionOutputArea = ({
     </StyledReverseButton>
     <TextAreaRight
       onChange={event => dispatchChangeReverseText(event)}
-      value={reverseText}
+      value={reversedText}
     />
     <TranslateLinkLeft
       target="_blank"
@@ -39,9 +39,9 @@ const DecryptionOutputArea = ({
     </TranslateLinkLeft>
     <TranslateLinkRight
       target="_blank"
-      href={`https://translate.google.com/#en/ja/${reverseText.trim().replace(/\n/g, ' ')}`}
+      href={`https://translate.google.com/#en/ja/${reversedText.trim().replace(/\n/g, ' ')}`}
     >
-      { reverseText.trim() ? 'Translate to JP' : '' }
+      { reversedText.trim() ? 'Translate to JP' : '' }
     </TranslateLinkRight>
   </Style>
 );
@@ -86,7 +86,7 @@ DecryptionOutputArea.propTypes = {
   dispatchChangeReverseText: PropTypes.func.isRequired,
   dispatchReverseText: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
-  reverseText: PropTypes.string.isRequired,
+  reversedText: PropTypes.string.isRequired,
 };
 
 export default DecryptionOutputArea;

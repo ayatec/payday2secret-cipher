@@ -15,7 +15,7 @@ const CipherOutputArea = ({
   dispatchChangeReverseText,
   dispatchReverseText,
   text,
-  reverseText,
+  reversedText,
 }) => (
   <Style>
     <TextAreaLeft
@@ -29,7 +29,7 @@ const CipherOutputArea = ({
     </StyledReverseButton>
     <TextAreaRight
       onChange={event => dispatchChangeReverseText(event)}
-      value={reverseText}
+      value={reversedText}
     />
   </Style>
 );
@@ -56,7 +56,7 @@ CipherOutputArea.propTypes = {
   dispatchChangeReverseText: PropTypes.func.isRequired,
   dispatchReverseText: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
-  reverseText: PropTypes.string.isRequired,
+  reversedText: PropTypes.string.isRequired,
 };
 
 export default CipherOutputArea;
