@@ -5,6 +5,15 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import { connect } from 'react-redux';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBackspace,
+  faCaretDown,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  faSquare,
+} from '@fortawesome/free-regular-svg-icons';
+
 import {
   inputLineBreak,
   inputBack,
@@ -35,13 +44,13 @@ const CipherInputAreaComponent = ({
     ))}
     <OparationArea>
       <InputOparation onClick={() => dispatchInputSpace()}>
-        Space
+        <FontAwesomeIcon icon={faSquare} />
       </InputOparation>
       <InputOparation onClick={() => dispatchInputBack()}>
-        ← Back
+        <FontAwesomeIcon icon={faBackspace} />
       </InputOparation>
       <InputOparation onClick={() => dispatchInputLineBreak()}>
-        ⏎ Line break
+        <FontAwesomeIcon icon={faCaretDown} />
       </InputOparation>
     </OparationArea>
   </Style>
@@ -69,8 +78,10 @@ const OparationArea = styled('div')`
 `;
 
 const InputOparation = styled(StyledInputKey)`
-  padding: 0.35rem .5rem 0 .5rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  height: 30px;
+  line-height: 29px;
+  padding: .2rem .5rem 0;
 `;
 
 // PropsTypes
