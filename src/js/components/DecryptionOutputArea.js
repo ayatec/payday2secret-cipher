@@ -22,12 +22,18 @@ const DecryptionOutputArea = ({
       onChange={event => dispatchChangeReverseText(event)}
       value={reverseText}
     />
-    <TranslateLink
+    <TranslateLinkLeft
       target="_blank"
       href={`https://translate.google.com/#en/ja/${text.trim().replace(/\n/g, ' ')}`}
     >
       { text.trim() ? 'Translate to JP' : '' }
-    </TranslateLink>
+    </TranslateLinkLeft>
+    <TranslateLinkRight
+      target="_blank"
+      href={`https://translate.google.com/#en/ja/${reverseText.trim().replace(/\n/g, ' ')}`}
+    >
+      { reverseText.trim() ? 'Translate to JP' : '' }
+    </TranslateLinkRight>
   </Style>
 );
 
@@ -51,8 +57,17 @@ const TranslateLink = styled('a')`
   width: 103px;
   padding: .5rem;
   position: absolute;
-  bottom: -1.25rem;
+  bottom: -1.1rem;
   right: 50%;
+`;
+
+const TranslateLinkLeft = styled(TranslateLink)`
+  margin-right: .5rem;
+  right: 50%;
+`;
+
+const TranslateLinkRight = styled(TranslateLink)`
+  right: .5rem;
 `;
 
 // PropTypes
