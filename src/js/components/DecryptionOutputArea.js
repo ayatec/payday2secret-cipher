@@ -9,7 +9,9 @@ import StyledOutputTextArea from './styled/StyledOutputTextArea';
 // Component
 const DecryptionOutputArea = ({
   dispatchChangeText,
+  dispatchChangeReverseText,
   text,
+  reverseText,
 }) => (
   <Style>
     <TextAreaLeft
@@ -17,8 +19,8 @@ const DecryptionOutputArea = ({
       value={text}
     />
     <TextAreaRight
-      onChange={event => dispatchChangeText(event)}
-      value={text}
+      onChange={event => dispatchChangeReverseText(event)}
+      value={reverseText}
     />
     <TranslateLink
       target="_blank"
@@ -43,8 +45,6 @@ const TextAreaLeft = styled(StyledOutputTextArea)`
 const TextAreaRight = styled(StyledOutputTextArea)`
   font-size: 1.2rem;
   background: #ccc;
-  direction: rtl;
-  unicode-bidi: bidi-override;
 `;
 
 const TranslateLink = styled('a')`
@@ -58,7 +58,9 @@ const TranslateLink = styled('a')`
 // PropTypes
 DecryptionOutputArea.propTypes = {
   dispatchChangeText: PropTypes.func.isRequired,
+  dispatchChangeReverseText: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
+  reverseText: PropTypes.string.isRequired,
 };
 
 export default DecryptionOutputArea;

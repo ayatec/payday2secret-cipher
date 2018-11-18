@@ -9,7 +9,9 @@ import StyledOutputTextArea from './styled/StyledOutputTextArea';
 // Component
 const CipherOutputArea = ({
   dispatchChangeText,
+  dispatchChangeReverseText,
   text,
+  reverseText,
 }) => (
   <Style>
     <TextAreaLeft
@@ -17,8 +19,8 @@ const CipherOutputArea = ({
       value={text}
     />
     <TextAreaRight
-      onChange={event => dispatchChangeText(event)}
-      value={text}
+      onChange={event => dispatchChangeReverseText(event)}
+      value={reverseText}
     />
   </Style>
 );
@@ -36,14 +38,14 @@ const TextAreaLeft = styled(StyledOutputTextArea)`
 
 const TextAreaRight = styled(StyledOutputTextArea)`
   font-family: "pd-secret";
-  direction: rtl;
-  unicode-bidi: bidi-override;
 `;
 
 // PropTypes
 CipherOutputArea.propTypes = {
   dispatchChangeText: PropTypes.func.isRequired,
+  dispatchChangeReverseText: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
+  reverseText: PropTypes.string.isRequired,
 };
 
 export default CipherOutputArea;
