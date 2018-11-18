@@ -5,6 +5,7 @@ import {
   INPUT_SPACE,
   INPUT_BACK,
   CHANGE_TEXT,
+  REVERSE_TEXT,
 } from '../actions';
 
 const initialState = {
@@ -36,6 +37,11 @@ const outputArea = (state = initialState, action) => {
     case CHANGE_TEXT:
       return {
         text: action.text,
+      };
+
+    case REVERSE_TEXT:
+      return {
+        text: state.text.split('\n').reverse().join('\n').split('').reverse().join(''),
       };
 
     default:

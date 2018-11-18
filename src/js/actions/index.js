@@ -4,6 +4,7 @@ export const INPUT_LINE_BREAK = 'INPUT_LINE_BREAK';
 export const INPUT_SPACE = 'INPUT_SPACE';
 export const INPUT_BACK = 'INPUT_BACK';
 export const CHANGE_TEXT = 'CHANGE_TEXT';
+export const REVERSE_TEXT = 'REVERSE_TEXT';
 export const CHANGE_INPUT_MODE = 'CHANGE_INPUT_MODE';
 
 export const inputKey = (keyCode) => {
@@ -35,6 +36,12 @@ export const changeText = (text) => {
   return {
     type: CHANGE_TEXT,
     text,
+  };
+};
+
+export const reverseText = () => {
+  return {
+    type: REVERSE_TEXT,
   };
 };
 
