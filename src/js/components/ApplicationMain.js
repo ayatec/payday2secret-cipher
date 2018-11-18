@@ -22,8 +22,14 @@ const ApplicationMainComponent = ({
 }) => (
   <Style>
     <CipherInputArea />
-    <CipherOutputArea dispatchChangeText={dispatchChangeText} text={text} />
-    <DecryptionOutputArea dispatchChangeText={dispatchChangeText} text={text} />
+    <CipherOutputArea
+      dispatchChangeText={dispatchChangeText}
+      text={text}
+    />
+    <DecryptionOutputArea
+      dispatchChangeText={dispatchChangeText}
+      text={text}
+    />
   </Style>
 );
 

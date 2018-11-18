@@ -12,8 +12,14 @@ const CipherOutputArea = ({
   text,
 }) => (
   <Style>
-    <TextAreaLeft onChange={event => dispatchChangeText(event)} value={text} />
-    <TextAreaRight onChange={event => dispatchChangeText(event)} value={text} />
+    <TextAreaLeft
+      onChange={event => dispatchChangeText(event)}
+      value={text}
+    />
+    <TextAreaRight
+      onChange={event => dispatchChangeText(event)}
+      value={text}
+    />
   </Style>
 );
 
