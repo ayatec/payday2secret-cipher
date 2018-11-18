@@ -3,13 +3,17 @@
 import React from 'react';
 import styled from 'react-emotion';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 
+import StyledReverseButton from './styled/StyledReverseButton';
 import StyledOutputTextArea from './styled/StyledOutputTextArea';
 
 // Component
 const CipherOutputArea = ({
   dispatchChangeText,
   dispatchChangeReverseText,
+  dispatchReverseText,
   text,
   reverseText,
 }) => (
@@ -18,6 +22,11 @@ const CipherOutputArea = ({
       onChange={event => dispatchChangeText(event)}
       value={text}
     />
+    <StyledReverseButton
+      dispatchReverseText={() => dispatchReverseText()}
+    >
+      <FontAwesomeIcon icon={faArrowsAltH} />
+    </StyledReverseButton>
     <TextAreaRight
       onChange={event => dispatchChangeReverseText(event)}
       value={reverseText}
@@ -29,6 +38,7 @@ const CipherOutputArea = ({
 const Style = styled('div')`
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 const TextAreaLeft = styled(StyledOutputTextArea)`
@@ -44,6 +54,7 @@ const TextAreaRight = styled(StyledOutputTextArea)`
 CipherOutputArea.propTypes = {
   dispatchChangeText: PropTypes.func.isRequired,
   dispatchChangeReverseText: PropTypes.func.isRequired,
+  dispatchReverseText: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
   reverseText: PropTypes.string.isRequired,
 };

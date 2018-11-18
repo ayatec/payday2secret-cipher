@@ -3,13 +3,17 @@
 import React from 'react';
 import styled from 'react-emotion';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 
+import StyledReverseButton from './styled/StyledReverseButton';
 import StyledOutputTextArea from './styled/StyledOutputTextArea';
 
 // Component
 const DecryptionOutputArea = ({
   dispatchChangeText,
   dispatchChangeReverseText,
+  dispatchReverseText,
   text,
   reverseText,
 }) => (
@@ -18,6 +22,11 @@ const DecryptionOutputArea = ({
       onChange={event => dispatchChangeText(event)}
       value={text}
     />
+    <StyledReverseButton
+      dispatchReverseText={() => dispatchReverseText()}
+    >
+      <FontAwesomeIcon icon={faArrowsAltH} />
+    </StyledReverseButton>
     <TextAreaRight
       onChange={event => dispatchChangeReverseText(event)}
       value={reverseText}
@@ -41,6 +50,7 @@ const DecryptionOutputArea = ({
 const Style = styled('div')`
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
 `;
 
@@ -62,7 +72,7 @@ const TranslateLink = styled('a')`
 `;
 
 const TranslateLinkLeft = styled(TranslateLink)`
-  margin-right: .5rem;
+  margin-right: 1.75rem;
   right: 50%;
 `;
 
@@ -74,6 +84,7 @@ const TranslateLinkRight = styled(TranslateLink)`
 DecryptionOutputArea.propTypes = {
   dispatchChangeText: PropTypes.func.isRequired,
   dispatchChangeReverseText: PropTypes.func.isRequired,
+  dispatchReverseText: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
   reverseText: PropTypes.string.isRequired,
 };
