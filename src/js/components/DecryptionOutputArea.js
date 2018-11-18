@@ -26,7 +26,7 @@ const DecryptionOutputArea = ({
       target="_blank"
       href={`https://translate.google.com/#en/ja/${text.trim().replace(/\n/g, ' ')}`}
     >
-      { text.trim() ? 'Translate to Japanese' : '' }
+      { text.trim() ? 'Translate to JP' : '' }
     </TranslateLink>
   </Style>
 );
@@ -48,7 +48,7 @@ const TextAreaRight = styled(StyledOutputTextArea)`
 `;
 
 const TranslateLink = styled('a')`
-  width: 154px;
+  width: 103px;
   padding: .5rem;
   position: absolute;
   bottom: -1.25rem;
