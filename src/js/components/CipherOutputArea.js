@@ -23,7 +23,7 @@ const CipherOutputArea = ({
       value={text}
     />
     <StyledReverseButton
-      dispatchReverseText={() => dispatchReverseText()}
+      onClick={() => dispatchReverseText()}
     >
       <FontAwesomeIcon icon={faArrowsAltH} />
     </StyledReverseButton>
