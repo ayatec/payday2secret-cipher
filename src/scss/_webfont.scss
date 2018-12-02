@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "ProximaSoft-Regular";
-  font-display: auto;
+  font-display: swap;
   src: url("../webfonts/ProximaSoft-Regular.eot");
   src: url("../webfonts/ProximaSoft-Regular.eot?#iefix") format("embedded-opentype"),
   url("../webfonts/ProximaSoft-Regular.woff2") format("woff2"),
@@ -12,6 +12,6 @@
 
 @font-face {
   font-family: 'pd-secret';
-  font-display: auto;
+  font-display: swap;
   src: url('../webfonts/pd-secret.ttf') format('truetype');
 }
